@@ -19,16 +19,6 @@ To receive the specific output logged into the console using javascript for loop
 we did this in order to practice the skills we have learnt so far
 with the programming languages JS and HTML.
 
-## Elements to be calculated and printed in console:
-
-number of months
-total amount of sales
-changes in profits/losses from month to month
-average of the monthly changes
-greatest increase & decrease in profits based on monthly changes
-The monthly sales data had been provided for this task. There were two data points provided: name of the month/year and month's profit/loss in $. The number of data rows = 86.
-
-
 ## Installation
 
 N/A {console}
