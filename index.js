@@ -86,3 +86,68 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// declaring the variables
+var total = 0;
+var changes = [];
+var sumMonthlyChanges = 0;
+var min = 0;
+var max = 0;
+var minIndex = 0;
+var maxIndex = 0;
+
+// testing monthly changes in profits
+// console.log(changes);
+
+// running the loop from index value 0 to calculate total amount of profits/loss
+for (var i = 0; i < finances.length; i++) {
+  total += finances[i][1];
+}
+
+//running the loop from index value 1 to exclude the value of first month in the data set
+for (var i = 1; i < finances.length; i++) {
+  var monthlyChange = finances[i][1] - finances[i - 1][1];
+  changes.push(monthlyChange);
+
+  //testing monthly changes number
+  //console.log(monthlyChange.length);
+
+  //calculating greatest decrease in profits
+  if (monthlyChange < min) {
+    min = monthlyChange;
+    minIndex = i;
+  }
+
+  //calculating greatest increase in profits
+  if (monthlyChange > max) {
+    max = monthlyChange;
+    maxIndex = i;
+  }
+}
+
+// testing min and max change in monthly profits
+// console.log(min);
+// console.log(finances[minIndex][0]);
+// console.log(max);
+// console.log(finances[maxIndex][0]);
+
+//calculating sum of monthly changes in profit
+for (var i = 0; i < changes.length; i++) {
+  sumMonthlyChanges += changes[i];
+}
+
+//printing the final output to the console
+console.log("Financial Analysis");
+console.log("----------------------------");
+console.log("Total months: " + finances.length);
+console.log("Total: $" + total);
+console.log(
+  "Average Change: $" + (sumMonthlyChanges / changes.length).toFixed(2)
+);
+console.log(
+  "Greatest Increase in Profits: " + finances[maxIndex][0] + " ($" + max + ")"
+);
+console.log(
+  "Greatest Decrease in Profits: " + finances[minIndex][0] + " ($" + min + ")"
+);
+
